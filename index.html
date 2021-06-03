@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Weather</title>
         <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"/>
     </head>
     <body>
         <header>
@@ -19,9 +20,37 @@
                     </h2>
                 </header>
                 <div>
-                    <button id="fetch-button">
+                    <div>
+                        <aside>
+                            <h3>
+                                Search
+                            </h3>
+                            <!-- this is my search bar -->
+                            <form class="input-group mb-3">
+                                <input id="search-input" type="text" class="form-control" placeholder="Search By City Name" aria-label="Search By City Name" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="search-button">Search</button>
+                            </form>
+                            <ul class="list-group">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">A third item</li>
+                                <li class="list-group-item">A fourth item</li>
+                                <li class="list-group-item">And a fifth one</li>
+                            </ul>
+                              
+                        </aside>
+                        <main>
+                            <section>
+                               <!-- this is where all of today's forecats will go  -->
+                            </section>
+                            <section>
+                                <!-- this is where all of the 5-day forecast goes -->
+                            </section>
+                        </main>
+                    </div>
+                    <!-- <button id="fetch-button">
                     Click Me
-                    </button>
+                    </button> -->
                 </div>
                 <!-- <table></table> ??? -->
             </section>
