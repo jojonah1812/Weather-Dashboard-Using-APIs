@@ -1,6 +1,6 @@
 //--global variables
 var userApiKey="5d050cc05f2e639349f41af0545c2086";
-// var cityName="Boston"
+var cityName=""
 var currentTemp=""
 var currentHumidity=""
 var currentWindSpeed=""
@@ -17,10 +17,10 @@ var searchInput = document.querySelector('#search-input');
 var requestGeo ="https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + ",US+&appid=" + userApiKey;
 
 //--URL needs the concatonated variables to run the request.
-"https://api.openweathermap.org/data/2.5/onecall?lat=" + lattitude + "&lon=" + longitude + "&appid=" + userApiKey;
+// "https://api.openweathermap.org/data/2.5/onecall?lat=" + lattitude + "&lon=" + longitude + "&appid=" + userApiKey;
 
 
-var fetchButton = document.getElementById('fetch-button');
+var fetchButton = document.getElementById('search-button');
 
 function weatherFetch() {
   // fetch request gets data on requested city
@@ -34,9 +34,11 @@ function weatherFetch() {
     })
 }
 //-- API call
-fetchButton.addEventListener('click', weatherFetch);
+// fetchButton.addEventListener('click', weatherFetch);
 
-function weatherSearch(search) {
+function weatherSearch(event) {
+  event.preventDefault()
+  var search = searchInput.value
   var requestURL="https://api.openweathermap.org/data/2.5/weather?q=" + search + "&appid=" + userApiKey;
 
   fetch(requestURL)
@@ -51,7 +53,40 @@ function weatherSearch(search) {
     });
 }
 
-fetchButton.addEventListener('click', weatherFetch);
+
+
+          
+var req = new Request(requestURL);
+fetch(req)
+    .then(function(response) {
+        return response.json();
+        console.log(results);
+
+    }).then(function(jsonResponse){
+      console.log(jsonResponse)
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fetchButton.addEventListener('click', weatherSearch);
 
 
 
