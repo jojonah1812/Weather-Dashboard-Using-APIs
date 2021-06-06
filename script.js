@@ -7,7 +7,7 @@ var currentWindSpeed=""
 var currentUvIndex=""
 var longitude=""
 var lattitude=""
-// DOM element references
+// DOM element references, from form in html
 var searchForm = document.querySelector('#search-form');
 var searchInput = document.querySelector('#search-input');
 
@@ -46,7 +46,7 @@ function weatherSearch(event) {
         return response.json();
     })
     .then(function(data) {
-        console.log(data)
+        console.log(data);
     })
     .catch(function (err) {
       console.error(err);
@@ -56,20 +56,21 @@ function weatherSearch(event) {
 
 
           
-var req = new Request(requestURL);
-fetch(req)
-    .then(function(response) {
-        return response.json();
-        console.log(results);
+// var req = new Request(requestURL);
+// fetch(req)
+//     .then(function(response) {
+//         return response.json();
+//         console.log(results);
 
-    }).then(function(jsonResponse){
-      console.log(jsonResponse)
-    })
-
-
+//     }).then(function(jsonResponse){
+//       console.log(jsonResponse)
+//     })
 
 
 
+
+// weather icon export.
+// https://openweathermap.org/img/w/%7Biconcode%7D.png
 
 
 
