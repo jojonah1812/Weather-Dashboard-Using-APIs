@@ -1,16 +1,13 @@
 //--global variables
 var userApiKey="5d050cc05f2e639349f41af0545c2086";
 var cityName=""
-var currentTemp=""
-var currentHumidity=""
-var currentWindSpeed=""
 var currentUvIndex=""
 var longitude=""
 var lattitude=""
 // DOM element references, from form in html
 var searchForm = document.querySelector('#search-form');
 var searchInput = document.querySelector('#search-input');
-
+var todaysForecast = document.querySelector('#todays-forecast');
 
 
 //--Geocoding lat & lon
@@ -35,19 +32,29 @@ function weatherFetch() {
 }
 //-- API call
 // fetchButton.addEventListener('click', weatherFetch);
+// THEN I am presented with the city name, the date, an icon representation of weather conditions, 
+// the temperature, the humidity, the wind speed, and the UV index
+// WHEN I view the UV index
 
 function weatherSearch(event) {
   event.preventDefault()
   var search = searchInput.value
   var requestURL="https://api.openweathermap.org/data/2.5/weather?q=" + search + "&appid=" + userApiKey;
+  
 
   fetch(requestURL)
     .then(function(response){
         return response.json();
     })
     .then(function(data) {
-        console.log(data);
-    })
+        
+        var cityName = data.name;
+        var currentTemp = data.main.temp;
+        var currentHumidity = data.main.humidity;
+        var currentWindSpeed = data.wind.speed;
+        var icon = data.weather[0].icon;
+        todaysForecast.textContent=`Name: ${cityName} Temp: ${currentTemp} Humidity: ${currentHumidity} Wind Speed:${currentWindSpeed} Icon:${icon}`; 
+      })
     .catch(function (err) {
       console.error(err);
     });
