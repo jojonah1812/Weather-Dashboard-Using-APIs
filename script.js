@@ -53,7 +53,7 @@ function weatherSearch(event) {
         var currentHumidity = data.main.humidity;
         var currentWindSpeed = data.wind.speed;
         var icon = data.weather[0].icon;
-        todaysForecast.textContent=`Name: ${cityName} Temp: ${currentTemp} Humidity: ${currentHumidity} Wind Speed:${currentWindSpeed} Icon:${icon}`; 
+        todaysForecast.textContent=`City Name: ${cityName} Temp: ${currentTemp} Humidity: ${currentHumidity} Wind Speed:${currentWindSpeed} Icon:${icon}`; 
       })
     .catch(function (err) {
       console.error(err);
