@@ -60,7 +60,7 @@ function weatherSearch(event) {
     });
 }
 
-
+fetchButton.addEventListener('click', weatherSearch);
 
           
 // var req = new Request(requestURL);
@@ -73,36 +73,5 @@ function weatherSearch(event) {
 //       console.log(jsonResponse)
 //     })
 
-
-
-
 // weather icon export.
 // https://openweathermap.org/img/w/%7Biconcode%7D.png
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-fetchButton.addEventListener('click', weatherSearch);
-
-
-
-
-
-// 'https://api.openweathermap.org/data/2.5/weather?q={city name},{state code}&appid={userApiKey}';
-// var requestURL = https://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}
-
-////Bryan said cut the state - it will run anyways ???
-// var stateName = "";
-// var stateCode =
